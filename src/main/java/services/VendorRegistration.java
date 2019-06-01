@@ -99,7 +99,7 @@ public class VendorRegistration extends HttpServlet
 					
 					bankaccount=str[j++];
 					int m=1010;
-					String cust_id="PRD"+name.substring(0,3)+(++m);
+					String cust_id="VEN"+name.substring(0,3)+(++m);
 					
 					Vendor vendor=new Vendor(cust_id,email, name, password, mobile, shopname, shopAddress,pincode, city, market, bankaccount,file_path);
 					vendor.setVerified("No"); 

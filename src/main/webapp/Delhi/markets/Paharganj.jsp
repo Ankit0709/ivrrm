@@ -9,7 +9,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- AIVM-->
+    <link rel="shortcut icon" href="../../img/IVRRM.png">
+    <!-- Author Meta -->
+    <meta name="author" content="CodePixar">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+
 <title>IVRRM</title>
 
     <link rel="stylesheet" href="../../css/linearicons.css">
@@ -20,17 +32,134 @@
     <link rel="stylesheet" href="../../css/nouislider.min.css">
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../css/main.css">
+    <style>
+.login_box_area
+{
+margin-top:5%;
+}
+
+    .footer-area
+    {
+        background-color: #000000;
+    }
+    body{
+        color: whitesmoke;
+        font-size: 18px;
+    }
+    .footer-area h6 {
+        color: #fff;
+        font-size: 20px;
+
+    }
+    .fa
+    {
+    color:black;
+    }
+    .form-row >p
+    {
+    color:black;}
+
+
+</style>
 </head>
 <body>
 
-<section style="padding-top: 15px; background: #ececec;">
+<!-- Start Header Area -->
+<header class="header_area sticky-header">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light main_box">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="../../index.jsp"><img src="../../img/IVRRM.png" alt="IVRRM" style="width:50px;height:50px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="../../index.jsp">Home</a></li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
+                                <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
+                                <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
+                                <li class="nav-item"><a class="nav-link" href="cart.jsp">Shopping Cart</a></li>
+                                <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
+                            </ul>
+                        </li>
+                         <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">User</a>
+                            <ul class="dropdown-menu">
+                            <%if(session.getAttribute("User")==null) 
+                            {
+                            	%><li class="nav-item"><a class="nav-link" href="../../login.jsp">Login</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="../../registration.jsp">SignUp</a></li>
+                                 <%
+                            }
+                            else
+                            {
+                            	%>
+                            	<li class="nav-item"><a class="nav-link" href="../../logoutUser">Logout</a></li>
+                            	<%
+                            }
+                            %>
+                                
+
+
+                            </ul>
+                        </li>
+                         <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">Vendor</a>
+                            <ul class="dropdown-menu">
+                                 <%if(session.getAttribute("Vendor")==null) 
+                            {
+                            	%><li class="nav-item"><a class="nav-link" href="../../vendor_login.jsp">Login</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="../../vendor_registration.jsp">SignUp</a></li>
+                                 <%
+                            }
+                            else
+                            {
+                            	%>
+                            	<li class="nav-item"><a class="nav-link" href="../../logoutVendor">Logout</a></li>
+                            	<%
+                            }
+                            %>
+                                
+                            </ul>
+                        </li>
+               
+                        <li class="nav-item"><a class="nav-link" href="../../contact.jsp">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item"><a href="cart.jsp" class="cart"><span class="ti-bag"></span></a></li>
+                        <li class="nav-item">
+                            <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+</header>
+<!-- End Header Area -->
+
+
+
+
+<section style="padding-top:8%">
 	  <div class="container">
 	    <div class="row">
 <%
   Session session2=HibernateSessionProvider.getSession();
-  Query query=session2.createQuery("from Vendor where city='Delhi' and market='Paharganj ' ");
-  
-  
+  Query query=session2.createQuery("from Vendor where city='Delhi' and market='Paharganj' ");
   
   
   
@@ -41,12 +170,12 @@
 	  {
 		  %>
 		<div class="col-lg-4 col-md-6">
-		<div class="card" style="width: 18rem;">
-		  <img class="card-img-top" src="<%=v.getShop_image()%>">
+		<div class="card" style="width:20rem;heigth:30rem;">
+		  <img class="card-img-top" src="../../my-files/<%=v.getShop_image()%>">
 		  <div class="card-body">
 		    <h5 class="card-title"><i class="fa fa-home" aria-hidden="true"></i>  <%=v.getShop_name() %></h5>
-		    <p class="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i>  <%=v.getShop_address() %></p>
-		    <a href="../../products.jsp?id=<%=v.getEmailid()%>" class="btn btn-success">Show Products</a>
+		    <h5 class="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i>  <%=v.getShop_address() %></h5>
+		    <a href="../../products.jsp?id=<%=v.getCust_id()%>" class="btn btn-success">Show Products</a>
 		  </div>
 		</div>
 		</div>
@@ -137,6 +266,7 @@
     </div>
 </footer>
 <!-- End footer Area -->
+
 
 </body>
 </html>

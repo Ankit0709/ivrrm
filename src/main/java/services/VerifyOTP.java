@@ -22,8 +22,7 @@ protected void service(HttpServletRequest req, HttpServletResponse res)
 	  +req.getParameter("codeBox4")+req.getParameter("codeBox5")+req.getParameter("codeBox6"));
 			
     int otp2=(Integer)req.getSession().getAttribute("otp");
-   
-   
+     
 	if(otp==otp2)
 	{
 		Vendor vendor=(Vendor) req.getSession().getAttribute("vendor");

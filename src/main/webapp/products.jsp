@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>AIVM</title>
+<title>IVRRM</title>
    <!--
         CSS
         ============================================= -->
@@ -50,7 +50,7 @@
         <nav class="navbar navbar-expand-lg navbar-light main_box">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.jsp"><img src="img/aivm2.png" alt="AIVM" style="width:100px;height:50px"></a>
+                <a class="navbar-brand logo_h" href="index.jsp"><img src="img/IVRRM.png" alt="IVRRM" style="width:50px;height:50px"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
@@ -127,15 +127,7 @@
             </div>
         </nav>
     </div>
-    <div class="search_input" id="search_input_box">
-        <div class="container">
-            <form class="d-flex justify-content-between">
-                <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                <button type="submit" class="btn"></button>
-                <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-            </form>
-        </div>
-    </div>
+    
 </header>
 <!-- End Header Area -->
 
@@ -145,84 +137,85 @@
 <%
 String id=request.getParameter("id");
  Session session2=HibernateSessionProvider.getSession();
- Vendor vendor=session2.get(Vendor.class,id);
- Set<Product> setOfProducts=vendor.getSetOfProducts();
  
+ Query query=session2.createQuery("from Vendor where Vendor_ID="+id);
+ List<Vendor> vendor=query.list();
+ for(Vendor v:vendor)
+ {
 
-	 
-	  for(Product p:setOfProducts)
-	  {
-		  %>
-		<div class="container">
-  <div class="card">
-    <div class="card-head">
-      <img src="https://s5.postimg.cc/wy79025cz/nike_Logo_White.png" alt="logo" class="card-logo">
-      <img src="https://s5.postimg.cc/j9r8yf9gn/sws1.png" alt="Shoe" class="product-img">
-      <div class="product-detail">
-        <h2>Hartbeespoort</h2> Support and Nike Zoom Air come together for a more supportive feel with high-speed responsiveness
-      </div>
-      <span class="back-text">
-              FAS
-            </span>
-    </div>
-    <div class="card-body">
-      <div class="product-desc">
-        <span class="product-title">
-                Hartbee<b>spoort</b>
-                <span class="badge">
-                  New
-                </span>
-        </span>
-        <span class="product-caption">
-                Basket Ball Collection
-              </span>
-        <span class="product-rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star grey"></i>
-              </span>
-      </div>
-      <div class="product-properties">
-        <span class="product-size">
-                <h4>Size</h4>
-                <ul class="ul-size">
-                  <li><a href="#">7</a></li>
-                  <li><a href="#">8</a></li>
-                  <li><a href="#">9</a></li>
-                  <li><a href="#" class="active">10</a></li>
-                  <li><a href="#">11</a></li>
-                </ul>
-              </span>
-        <span class="product-color">
-                <h4>Colour</h4>
-                <ul class="ul-color">
-                  <li><a href="#" class="orange active"></a></li>
-                  <li><a href="#" class="green"></a></li>
-                  <li><a href="#" class="yellow"></a></li>
-                </ul>
-              </span>
-        <span class="product-price">
-                USD<b>23,453</b>
-              </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-<div class="yt">
+	 Set<Product> setOfProducts=v.getSetOfProducts();
+	  
+		  for(Product p:setOfProducts)
+		  {
+			  %>
+			<div class="container">
+	  <div class="card">
+	    <div class="card-head">
+	      <img src="https://s5.postimg.cc/wy79025cz/nike_Logo_White.png" alt="logo" class="card-logo">
+	      <img src="https://s5.postimg.cc/j9r8yf9gn/sws1.png" alt="Shoe" class="product-img">
+	      <div class="product-detail">
+	        <h2>Hartbeespoort</h2> Support and Nike Zoom Air come together for a more supportive feel with high-speed responsiveness
+	      </div>
+	      <span class="back-text">
+	              FAS
+	            </span>
+	    </div>
+	    <div class="card-body">
+	      <div class="product-desc">
+	        <span class="product-title">
+	                Hartbee<b>spoort</b>
+	                <span class="badge">
+	                  New
+	                </span>
+	        </span>
+	        <span class="product-caption">
+	                Basket Ball Collection
+	              </span>
+	        <span class="product-rating">
+	                <i class="fa fa-star"></i>
+	                <i class="fa fa-star"></i>
+	                <i class="fa fa-star"></i>
+	                <i class="fa fa-star"></i>
+	                <i class="fa fa-star grey"></i>
+	              </span>
+	      </div>
+	      <div class="product-properties">
+	        <span class="product-size">
+	                <h4>Size</h4>
+	                <ul class="ul-size">
+	                  <li><a href="#">7</a></li>
+	                  <li><a href="#">8</a></li>
+	                  <li><a href="#">9</a></li>
+	                  <li><a href="#" class="active">10</a></li>
+	                  <li><a href="#">11</a></li>
+	                </ul>
+	              </span>
+	        <span class="product-color">
+	                <h4>Colour</h4>
+	                <ul class="ul-color">
+	                  <li><a href="#" class="orange active"></a></li>
+	                  <li><a href="#" class="green"></a></li>
+	                  <li><a href="#" class="yellow"></a></li>
+	                </ul>
+	              </span>
+	        <span class="product-price">
+	                USD<b>23,453</b>
+	              </span>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="yt">
   <a href="https://www.youtube.com/watch?v=jYAmKNOJ4Ck" target="_blank">
     <img width="151" src="https://s5.postimg.cc/vzwuxmw87/template.png" alt="" />
   </a>
 </div>
-		  <%
-		  
-	  }  
+
+<%
+	 
+ }
+ }
+	  
  
 %>
 	</div>
@@ -271,7 +264,7 @@ String id=request.getParameter("id");
             <div class="col-lg-3  col-md-6 col-sm-6">
                     <div class="single-footer-widget">
                         <h6>REGISTERED OFFICE ADDRESS</h6>
-                        <p>IVVRM ECOMMERCE PVT. LTD.<br>
+                        <p>IVRRM ECOMMERCE PVT. LTD.<br>
                         C/O SHEELA DEVI JASROOP NAGAR,CHANDERLOK COLONY<br>
                         MODI NAGAR ROAD,HAPUR,Ghaziabad,<br>
                         Uttar Pradesh,245101.
@@ -295,14 +288,13 @@ String id=request.getParameter("id");
         </div>
         <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
             <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy; <script>document.write(new Date().getFullYear());</script> <b>IVVRM</b> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                Copyright &copy; <script>document.write(new Date().getFullYear());</script> <b>IVRRM</b> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
         </div>
     </div>
 </footer>
 <!-- End footer Area -->
-
 
 </body>
 </html>

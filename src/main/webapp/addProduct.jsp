@@ -16,7 +16,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>IVVRM</title>
+    <title>IVRRM</title>
     <!--
         CSS
         ============================================= -->
@@ -63,7 +63,7 @@
         <nav class="navbar navbar-expand-lg navbar-light main_box">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.jsp"><img src="img/IVRRM.png" alt="IVRRM" style="width:100px;height:50px"></a>
+                <a class="navbar-brand logo_h" href="index.jsp"><img src="img/IVRRM.png" alt="IVRRM" style="width:50px;height:50px"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
@@ -140,15 +140,7 @@
             </div>
         </nav>
     </div>
-    <div class="search_input" id="search_input_box">
-        <div class="container">
-            <form class="d-flex justify-content-between">
-                <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                <button type="submit" class="btn"></button>
-                <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-            </form>
-        </div>
-    </div>
+  
 </header>
 <!-- End Header Area -->
 
@@ -253,6 +245,7 @@
 </section>
 <!-- start footer Area -->
 
+
 <footer class="footer-area section_gap">
     <div class="container">
         <div class="row">
@@ -296,7 +289,7 @@
             <div class="col-lg-3  col-md-6 col-sm-6">
                     <div class="single-footer-widget">
                         <h6>REGISTERED OFFICE ADDRESS</h6>
-                        <p>IVVRM ECOMMERCE PVT. LTD.<br>
+                        <p>IVRRM ECOMMERCE PVT. LTD.<br>
                         C/O SHEELA DEVI JASROOP NAGAR,CHANDERLOK COLONY<br>
                         MODI NAGAR ROAD,HAPUR,Ghaziabad,<br>
                         Uttar Pradesh,245101.
@@ -320,7 +313,7 @@
         </div>
         <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
             <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy; <script>document.write(new Date().getFullYear());</script> <b>IVVRM</b> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                Copyright &copy; <script>document.write(new Date().getFullYear());</script> <b>IVRRM</b> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
         </div>

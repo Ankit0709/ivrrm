@@ -9,7 +9,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- AIVM-->
+    <link rel="shortcut icon" href="../../img/IVRRM.png">
+    <!-- Author Meta -->
+    <meta name="author" content="CodePixar">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+
 <title>IVRRM</title>
 
     <link rel="stylesheet" href="../../css/linearicons.css">
@@ -86,14 +98,14 @@ margin-top:5%;
                             <ul class="dropdown-menu">
                             <%if(session.getAttribute("User")==null) 
                             {
-                            	%><li class="nav-item"><a class="nav-link" href="login.jsp">Login</a></li>
-                                 <li class="nav-item"><a class="nav-link" href="registration.jsp">SignUp</a></li>
+                            	%><li class="nav-item"><a class="nav-link" href="../../login.jsp">Login</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="../../registration.jsp">SignUp</a></li>
                                  <%
                             }
                             else
                             {
                             	%>
-                            	<li class="nav-item"><a class="nav-link" href="logoutUser">Logout</a></li>
+                            	<li class="nav-item"><a class="nav-link" href="../../logoutUser">Logout</a></li>
                             	<%
                             }
                             %>
@@ -108,14 +120,14 @@ margin-top:5%;
                             <ul class="dropdown-menu">
                                  <%if(session.getAttribute("Vendor")==null) 
                             {
-                            	%><li class="nav-item"><a class="nav-link" href="vendor_login.jsp">Login</a></li>
-                                 <li class="nav-item"><a class="nav-link" href="vendor_registration.jsp">SignUp</a></li>
+                            	%><li class="nav-item"><a class="nav-link" href="../../vendor_login.jsp">Login</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="../../vendor_registration.jsp">SignUp</a></li>
                                  <%
                             }
                             else
                             {
                             	%>
-                            	<li class="nav-item"><a class="nav-link" href="logoutVendor">Logout</a></li>
+                            	<li class="nav-item"><a class="nav-link" href="../../logoutVendor">Logout</a></li>
                             	<%
                             }
                             %>
@@ -123,7 +135,7 @@ margin-top:5%;
                             </ul>
                         </li>
                
-                        <li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../contact.jsp">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item"><a href="cart.jsp" class="cart"><span class="ti-bag"></span></a></li>
@@ -163,7 +175,7 @@ margin-top:5%;
 		  <div class="card-body">
 		    <h5 class="card-title"><i class="fa fa-home" aria-hidden="true"></i>  <%=v.getShop_name() %></h5>
 		    <h5 class="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i>  <%=v.getShop_address() %></h5>
-		    <a href="../../products.jsp?id=<%=v.getEmailid()%>" class="btn btn-success">Show Products</a>
+		    <a href="../../products.jsp?id=<%=v.getCust_id()%>" class="btn btn-success">Show Products</a>
 		  </div>
 		</div>
 		</div>
